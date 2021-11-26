@@ -28,7 +28,7 @@ contract TokenSwap {
     }
     
     function tokenTransfer(address addressGame) public payable {
-        require(uint(tokenERC20.allowance(msg.sender, address(this))) <= uint(0), "Error price");
+        require(uint(tokenERC20.allowance(msg.sender, address(this))) <= uint(0), "Amount Error");
         uint256  amount = uint256(tokenERC20.allowance(msg.sender, address(this)));
         tokenERC20.transferFrom(msg.sender, addressGame, amount);
     }
